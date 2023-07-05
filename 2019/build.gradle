@@ -1,0 +1,49 @@
+plugins {
+    id "application"
+    id "maven-publish"
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+archivesBaseName = "fireworks"
+version = "1.2.19"
+group = "ai.arcblroth"
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+sourceSets {
+    main.java {
+        srcDir  "AIslandBase/"
+        exclude "AIslandBase/LICENSE"
+        exclude "AIslandBase/README.md"
+    }
+}
+
+java {
+    withSourcesJar()
+}
+
+application {
+    mainClass = 'fireworks.Main'
+}
+
+jar {
+    from "../LICENSE"
+    manifest {
+        attributes["Main-Class"] = application.mainClass
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
+}

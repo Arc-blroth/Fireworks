@@ -1,8 +1,9 @@
 [package]
-name = "zoea"
+name = "fireworks"
 authors = ["Arc-blroth <45273859+Arc-blroth@users.noreply.github.com>"]
-license = "MIT OR Apache-2.0"
-version = "0.1.0"
+license = "GPL-3.0-or-later"
+version = "2.0.23"
 edition = "2021"
+private = true
 
 [dependencies]
