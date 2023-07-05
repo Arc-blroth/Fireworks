@@ -7,3 +7,4 @@ edition = "2021"
 private = true
 
 [dependencies]
+macroquad = { version = "0.3.25", default-features = false }
